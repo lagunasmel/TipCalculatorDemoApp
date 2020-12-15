@@ -17,10 +17,7 @@ The following **required** functionality is complete:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
-
-![](https://i.imgur.com/IHRB35S.gif)
-
+[Here](https://i.imgur.com/IHRB35S.gif) is a walkthrough of implemented user stories. 
 
 GIF created with [EZGif](https://ezgif.com/).
 
