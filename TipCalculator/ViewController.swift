@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var splitField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
@@ -40,32 +39,15 @@ class ViewController: UIViewController {
         
         // Calculate the tip and total
         let tipPercentages = [0.15, 0.18, 0.2]
-        let splitAmount = Double(splitField.text!) ?? 1
         
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex] / splitAmount
+        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         
-        let total = (bill + tip) / splitAmount
+        let total = bill + tip
         
         // Update the tip and total labels
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
     
-    @IBAction func calculateSplitTip(_ sender: Any) {
-        // Get the bill amount
-        let bill = Double(billField.text!) ?? 0
-        let splitAmount = Double(splitField.text!) ?? 1
-        
-        // Calculate the tip and total
-        let tipPercentages = [0.15, 0.18, 0.2]
-        
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex] / splitAmount
-        let total = (bill + tip) / splitAmount
-        
-        // Update the tip and total labels
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
-        
-    }
 }
 
